@@ -7,14 +7,12 @@ cc_library(
     srcs = glob([
         "src/*.cpp",
     ]),
-    hdrs = glob(
-        [
-            "include/cppoptlib/*.h",
-            "include/cppoptlib/linesearch/*.h",
-            "include/cppoptlib/solver/*.h",
-            "include/cppoptlib/utils/*.h",
-        ]
-    ),
+    hdrs = glob([
+        "include/cppoptlib/*.h",
+        "include/cppoptlib/linesearch/*.h",
+        "include/cppoptlib/solver/*.h",
+        "include/cppoptlib/utils/*.h",
+    ]),
     includes = ["include"],
     visibility = ["//visibility:public"],
     deps = [
