@@ -1,12 +1,15 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 
-# Load 3.3.9
-new_git_repository(
-  name="eigen_archive",
-  commit="5f25bcf7d6918f5c6091fb4e961e5607e13b7324",
-  remote="https://gitlab.com/libeigen/eigen.git",
-  build_file = "@//bazel:eigen.BUILD",
+# load the eigen library
+http_archive(
+    name = "org_tuxfamily_eigen",
+    build_file = "@//bazel:eigen.BUILD",
+    sha256 = "d56fbad95abf993f8af608484729e3d87ef611dd85b3380a8bad1d5cbc373a57",
+    strip_prefix = "eigen-3.3.7",
+    urls = [
+        "https://agmt-public.s3.us-east-2.amazonaws.com/install/eigen-3.3.7.tar.gz",
+    ],
 )
 
 http_archive(

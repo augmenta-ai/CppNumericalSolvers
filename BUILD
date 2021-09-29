@@ -16,7 +16,9 @@ cc_library(
         ]
     ),
     visibility = ["//visibility:public"],
-    deps = ["@eigen_archive//:eigen"]
+    deps = [
+        "@org_tuxfamily_eigen//:eigen"
+    ]
 )
 
 load("//:generator.bzl", "build_example", "build_test")
