@@ -15,6 +15,7 @@ cc_library(
             "include/cppoptlib/utils/*.h"
         ]
     ),
+    includes = ["include"],
     visibility = ["//visibility:public"],
     deps = [
         "@org_tuxfamily_eigen//:eigen"
